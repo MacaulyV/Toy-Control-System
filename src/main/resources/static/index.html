@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Box - Gerenciamento de Brinquedos</title>
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTTXJNl1+ygPJr+1N8r2aNPxthwDsg/ldgM0ddXjvhPqV+U8xUgDVu6EoF0jL3cY+iv5ZrPv5Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="header-container">
+    <img src="/images/Happy-Box.png" alt="Happy Box Logo" class="logo">
+    <h1>Happy Box Brinquedos Infantis</h1>
+</div>
+<div class="table-container">
+    <div class="action-buttons">
+        <button id="createBtn" class="action-btn add-btn"><i class="fas fa-plus"></i> Adicionar Brinquedo</button>
+        <input type="text" id="searchInput" placeholder="Digite o nome do brinquedo" class="search-input">
+        <button id="viewBtn" class="action-btn view-btn"><i class="fas fa-search"></i> Visualizar</button>
+        <button id="backBtn" class="action-btn back-btn" style="display: none;"><i class="fas fa-arrow-left"></i> Voltar</button>
+    </div>
+    <table id="brinquedosTable">
+        <thead>
+        <tr>
+            <th>Imagem</th>
+            <th>Nome</th>
+            <th>Tipo</th>
+            <th>Classificação</th>
+            <th>Tamanho</th>
+            <th>Preço (R$)</th>
+            <th>Ações</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- Os dados serão inseridos aqui pelo JavaScript -->
+        </tbody>
+    </table>
+</div>
+
+<!-- Modal de Criação e Edição -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span id="closeModal" class="close">&times;</span>
+        <h2 id="modalTitle">Adicionar Brinquedo</h2>
+        <form id="brinquedoForm">
+            <input type="hidden" id="brinquedoId">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="tipo">Tipo:</label>
+            <select id="tipo" name="tipo" required>
+                <option value="" disabled selected>Selecione uma categoria</option>
+                <option value="Eletrônico">Eletrônico</option>
+                <option value="Educativo">Educativo</option>
+                <option value="Pelúcia">Pelúcia</option>
+                <option value="Construção">Construção</option>
+                <option value="Ação">Ação</option>
+                <option value="Fantasia">Fantasia</option>
+                <option value="Música">Música</option>
+                <option value="Arte">Arte</option>
+                <option value="Jogos">Jogos</option>
+                <option value="Esportes">Esportes</option>
+            </select>
+
+            <label for="classificacao">Classificação:</label>
+            <input type="number" id="classificacao" name="classificacao" min="0" required>
+
+            <label for="tamanho">Tamanho:</label>
+            <div class="filter-container">
+                <select id="tamanho" name="tamanho" required>
+                    <option value="" disabled selected>Selecione o tamanho</option>
+                    <option value="Pequeno">Pequeno</option>
+                    <option value="Médio">Médio</option>
+                    <option value="Grande">Grande</option>
+                </select>
+            </div>
+
+            <label for="preco">Preço (R$):</label>
+            <input type="number" id="preco" name="preco" step="0.01" min="0" required>
+
+            <button type="submit" class="submit-btn">Salvar</button>
+        </form>
+    </div>
+</div>
+
+<!-- Mensagem de Feedback -->
+<div id="message" class="message"></div>
+
+<!-- Script JavaScript -->
+<script src="script.js"></script>
+</body>
+</html>

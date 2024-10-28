@@ -1,0 +1,617 @@
+/* Variáveis de cores para facilitar a manutenção */
+:root {
+    /* Novo Gradiente de Fundo */
+    --background-gradient: linear-gradient(111.4deg, rgba(7,7,9,1) 6.5%, rgba(27,24,113,1) 93.2%);
+
+    /* Cores da tabela */
+    --table-bg: rgba(255, 255, 255, 0.1); /* Semi-transparente para destacar sobre o fundo */
+    --header-bg: rgb(23, 23, 23); /* Cabeçalhos com cor sólida para contraste */
+    --header-color: #00cfff; /* Texto branco nos cabeçalhos */
+    --row-hover-bg: rgba(255, 255, 255, 0.2); /* Fundo mais claro no hover */
+    --text-color: #ffffff; /* Texto branco nas células */
+    --shadow-color: rgba(106, 0, 250, 0.7);
+    --border-color: rgba(255, 255, 255, 0.2);
+    --transition-duration: 0.3s;
+
+    /* Cores dos Botões */
+    --add-btn-bg: #1b1871; /* Azul Escuro */
+    --add-btn-color: #ffffff;
+    --add-btn-border: #ffffff;
+    --delete-btn-color: #d71818; /* Vermelho Suave */
+    --update-btn-color: #24e329; /* Verde */
+    --view-btn-color: #ffa500; /* Laranja para visualização */
+    --back-btn-color: #ffffff; /* Branco para voltar */
+
+    /* Efeitos de luz */
+    --highlight-color: #00ccff; /* Dourado para destaque */
+
+    /* Cores para o Filtro de Tamanho */
+    --filtro-bg: rgba(27,24,113,0.8);
+    --filtro-text-color: #ffffff; /* Cor do texto nas opções */
+}
+
+/* Estilo global */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: linear-gradient( 111.4deg,  rgba(7,7,9,1) 6.5%, rgba(27,24,113,1) 93.2% );
+    color: var(--text-color);
+    margin: 0;
+    padding: 40px 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Contêiner para o título e logo */
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Mantém o título centralizado */
+    gap: 15px; /* Espaço entre o logo e o título */
+    margin-bottom: 20px;
+}
+
+/* Estilo do logo com animação */
+.logo {
+    width: 400px; /* Ajuste o tamanho conforme necessário */
+    height: auto;
+    animation: float 3s ease-in-out infinite; /* Animação de flutuação */
+    transition: transform 0.3s ease; /* Transição suave para o hover */
+}
+
+/* Hover para aumentar a escala ao passar o mouse */
+.logo:hover {
+    transform: scale(1.2); /* Aumenta a escala em 10% */
+}
+
+/* Animação de flutuação para cima e para baixo */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0); /* Posição inicial e final */
+    }
+    50% {
+        transform: translateY(-20px); /* Sobe 20px no meio da animação */
+    }
+}
+
+
+/* Ajustando o título para a nova configuração */
+.header-container h1 {
+    margin: 0;
+    color: var(--header-color);
+    text-shadow: 0 0 10px var(--highlight-color);
+    animation: fadeInDown 1s ease-out forwards;
+}
+
+h1 {
+    text-align: center;
+    color: var(--header-color);
+    margin-bottom: 40px;
+    font-size: 3.5em;
+    text-shadow: 0 0 10px var(--highlight-color);
+    animation: fadeInDown 1s ease-out forwards;
+}
+
+/* Container da tabela */
+.table-container {
+    width: 100%;
+    max-width: 1300px; /* Aumentado para acomodar a coluna de imagem */
+    background-image: linear-gradient( 105.3deg,  rgba(30,39,107,1) 21.8%, rgba(77,118,221,1) 100.2% );
+    border-radius: 12px;
+    box-shadow: 0 8px 32px var(--shadow-color);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 20px;
+    animation: fadeIn 1s ease-out forwards;
+}
+
+/* Botões de Ação */
+.action-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.action-btn {
+    border: 2px solid;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color var(--transition-duration), color var(--transition-duration), border-color var(--transition-duration);
+    background-color: transparent;
+    color: var(--text-color);
+}
+
+.action-btn:focus {
+    outline: none;
+}
+
+/* Estilos Específicos para Cada Botão */
+.add-btn {
+    background-image: linear-gradient( 93.2deg,  rgba(24,95,246,1) 14.4%, rgba(27,69,166,1) 90.8% );
+    color: var(--add-btn-color);
+    box-shadow: 0 8px 32px var(--shadow-color);
+    border-color: var(--add-btn-border);
+}
+
+.add-btn:hover {
+    background-color: #5500ff;
+}
+
+.view-btn {
+    background-color: transparent;
+    color: var(--view-btn-color); /* Laranja */
+    border-color: var(--view-btn-color);
+}
+
+.view-btn:hover {
+    background-color: rgba(255, 165, 0, 0.2);
+}
+
+.back-btn {
+    background-color: transparent;
+    color: var(--back-btn-color); /* Branco */
+    border-color: var(--back-btn-color);
+}
+
+.back-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.delete-btn {
+    background-color: transparent;
+    color: var(--delete-btn-color); /* Vermelho Suave */
+    border-color: var(--delete-btn-color);
+    padding-top: 50px;
+}
+
+.delete-btn:hover {
+    background-color: rgba(255, 77, 77, 0.2);
+}
+
+.edit-btn {
+    padding-bottom: 50px;
+    background-color: transparent;
+    color: var(--update-btn-color); /* Verde */
+    border-color: var(--update-btn-color);
+}
+
+.edit-btn:hover {
+    background-color: rgba(76, 175, 80, 0.2);
+}
+
+/* Campo de Busca */
+.search-input {
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: 2px solid #ffffff;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    transition: border-color var(--transition-duration);
+    flex: 1;
+    max-width: 300px;
+}
+
+.search-input::placeholder {
+    color: #dddddd;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: var(--highlight-color);
+}
+
+/* Estilo da tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+thead {
+    background: var(--header-bg);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th {
+    padding: 20px;
+    text-align: center;
+    color: var(--header-color);
+    font-size: 1.2em;
+    position: relative;
+    transition: background var(--transition-duration), transform var(--transition-duration);
+    cursor: pointer;
+}
+
+th::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 4px;
+    background: var(--highlight-color);
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+th:hover::after {
+    width: 60%;
+    left: 20%;
+}
+
+tbody tr {
+    background: transparent;
+    border-bottom: 1px solid var(--border-color);
+    transition: background var(--transition-duration), transform var(--transition-duration);
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideUp 0.5s ease-out forwards;
+}
+
+tbody tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.05); /* Fundo leve para linhas pares */
+}
+
+tbody tr:hover {
+    background: var(--row-hover-bg);
+    transform: scale(1.02);
+    box-shadow: 0 4px 15px var(--shadow-color);
+}
+
+td {
+    padding: 20px;
+    text-align: center;
+    transition: color var(--transition-duration), background var(--transition-duration);
+    position: relative;
+}
+
+td:hover {
+    color: var(--highlight-color);
+}
+
+/* Imagens das Categorias */
+.tipo-imagem {
+    width: 100%;           /* Ocupa toda a largura da coluna */
+    height: 100%;          /* Ocupa toda a altura da coluna */
+    object-fit: cover;     /* Preenche toda a célula, mantendo a proporção */
+    border-radius: 8px;    /* Bordas arredondadas para um visual mais suave */
+}
+
+td:nth-child(1) {
+    width: 150px;           /* Ajuste conforme necessário para acomodar a imagem maior */
+    height: 150px;          /* A altura será ajustada de acordo com a imagem */
+    text-align: center;     /* Centraliza o conteúdo da célula */
+    padding: 0;             /* Remove o padding para que a imagem ocupe todo o espaço */
+    vertical-align: middle; /* Alinha verticalmente a célula */
+}
+
+/* Estilização do Filtro de Tamanho (e Tipo) */
+.filter-container {
+    background-color: var(--filtro-bg);
+    padding: 5px 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    display: inline-block;
+}
+
+/* Campo Tipo e Tamanho */
+#tipo, #tamanho {
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--filtro-bg) !important; /* Atualiza para usar o mesmo fundo do filtro */
+    color: var(--filtro-text-color) !important;
+    appearance: none; /* Remove a seta padrão do select */
+    -webkit-appearance: none; /* Remove a aparência padrão no Webkit */
+    -moz-appearance: none; /* Remove a aparência padrão no Firefox */
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 20px;
+    cursor: pointer;
+    transition: background-color var(--transition-duration), color var(--transition-duration);
+    width: 100%;
+}
+
+#tipo:hover, #tamanho:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important; /* Adicione um efeito suave ao passar o mouse */
+}
+
+#tipo:focus, #tamanho:focus {
+    outline: none;
+    box-shadow: 0 0 5px var(--highlight-color);
+}
+
+/* Corrige a seta do dropdown para garantir estilo consistente */
+.select-arrow {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+
+
+/* Botões de Ação na Tabela */
+.action-btn-table {
+    border: 2px solid;
+    border-radius: 20px;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 1em;
+    margin: 5px 0; /* Aumentei o espaçamento vertical */
+    padding: 10px 20px; /* Aumentei o padding para maior tamanho */
+    transition: color var(--transition-duration), border-color var(--transition-duration), background-color var(--transition-duration);
+    width: 120px; /* Define um tamanho fixo para consistência */
+    display: block; /* Garante que os botões ocupem a largura definida */
+}
+
+.action-btn-table.edit-btn {
+    color: var(--update-btn-color);
+    border-color: var(--update-btn-color);
+}
+
+.action-btn-table.edit-btn:hover {
+    background-color: rgba(76, 175, 80, 0.2);
+}
+
+.action-btn-table.delete-btn {
+    color: var(--delete-btn-color);
+    border-color: var(--delete-btn-color);
+}
+
+.action-btn-table.delete-btn:hover {
+    background-color: rgba(255, 77, 77, 0.2);
+}
+
+/* Modal */
+.modal {
+    display: none; /* Oculto por padrão */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.7);
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+.modal-content {
+    background-color: rgba(27,24,113,0.9); /* Transparente sobre o fundo com base no tema */
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    width: 80%;
+    max-width: 500px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px var(--shadow-color);
+    position: relative;
+    animation: slideUp 0.5s ease-out forwards;
+}
+
+.close {
+    color: var(--header-color);
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 2em;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: var(--highlight-color);
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    color: var(--header-color);
+    text-shadow: 0 0 5px var(--highlight-color);
+}
+
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-content label {
+    margin: 10px 0 5px;
+    color: var(--text-color);
+}
+
+.modal-content input,
+.modal-content select {
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+}
+
+.modal-content input::placeholder,
+.modal-content select option {
+    color: #dddddd;
+}
+
+.modal-content input:focus,
+.modal-content select:focus {
+    outline: none;
+    border: 2px solid var(--highlight-color);
+}
+
+.submit-btn {
+    background-color: var(--add-btn-bg);
+    color: var(--add-btn-color);
+    border: 2px solid var(--add-btn-border);
+    padding: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color var(--transition-duration), color var(--transition-duration), border-color var(--transition-duration);
+}
+
+.submit-btn:hover {
+    background-color: #14146f;
+    border-color: #14146f;
+}
+
+/* Mensagem de Feedback */
+.message {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    padding: 15px 20px;
+    border-radius: 6px;
+    display: none;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+.message.success {
+    background-color: rgba(76, 175, 80, 0.9); /* Verde */
+}
+
+.message.error {
+    background-color: rgba(244, 67, 54, 0.9); /* Vermelho */
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    th, td {
+        padding: 15px;
+        font-size: 1em;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    .modal-content {
+        width: 90%;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-input {
+        width: 100%;
+    }
+
+    /* Ajuste no tamanho do select */
+    #tamanho {
+        padding: 8px;
+    }
+
+    .action-btn-table {
+        width: 100%;
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .table-container {
+        padding: 15px;
+    }
+
+    th, td {
+        padding: 12px;
+        font-size: 0.9em;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    thead {
+        display: none;
+    }
+
+    tbody tr {
+        margin-bottom: 20px;
+        border-bottom: 2px solid var(--shadow-color);
+    }
+
+    tbody tr::before {
+        content: attr(data-label);
+        display: block;
+        font-weight: bold;
+        margin-bottom: 8px;
+        color: var(--header-color);
+        text-transform: uppercase;
+    }
+
+    td {
+        text-align: right;
+        position: relative;
+        padding-left: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+    }
+
+    td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 15px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        text-align: left;
+        font-weight: bold;
+        color: var(--highlight-color);
+        text-transform: uppercase;
+    }
+
+    /* Ajuste no tamanho do select */
+    #tamanho {
+        padding: 8px;
+    }
+
+    .action-btn-table {
+        width: 100%;
+        margin: 10px 0;
+    }
+}
