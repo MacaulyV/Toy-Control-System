@@ -1,4 +1,4 @@
-![Happy-Box.png](https://github.com/user-attachments/assets/d1bc6089-7933-41ce-8dc7-2809761bf02e)
+![Happy-Box.png](https://github.com/user-attachments/assets/07f72551-c80d-496c-83cb-8a57dce926c6)
 
 # 📦 **Happy Box - Toy Management System**
 
@@ -170,4 +170,4 @@ Todos os requisitos do CheckPoint 2 foram atendidos, incluindo:
 
 ### **Print da tela com a configuração final do Spring Initializr da criação no inicio do projeto**
 
-![Spring-Initializr.png](https://github.com/user-attachments/assets/cb25aed9-573e-41de-b3a0-811ddfcf9966)
+![Spring-Initializr.png](https://github.com/user-attachments/assets/30f0343c-a782-4685-adf9-e3b9dbc8bb8c)
