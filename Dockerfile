@@ -12,7 +12,7 @@ COPY pom.xml .
 COPY src ./src
 
 # Execute a construção do Maven ignorando os testes
-RUN mvn clean install -DskipTests
+RUN mvn clean install -DskipTests -Dfile.encoding=UTF-8
 
 # Use uma imagem base mais leve para executar o aplicativo
 FROM openjdk:17-jdk-slim
