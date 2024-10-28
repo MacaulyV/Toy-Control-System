@@ -1,4 +1,4 @@
-# Use uma imagem base do Ubuntu para construção 
+# Use uma imagem base do Ubuntu para construção
 FROM ubuntu:focal AS build
 
 # Atualize o repositório e instale o JDK e Maven
