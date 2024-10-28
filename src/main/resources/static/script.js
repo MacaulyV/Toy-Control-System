@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const apiUrl = 'http://localhost:8080/api/brinquedos'; // Certifique-se de que esta URL está correta
+    const apiUrl = 'https://toy-control-system.onrender.com/api/brinquedos';
     const tableBody = document.querySelector('#brinquedosTable tbody');
     const createBtn = document.getElementById('createBtn');
     const viewBtn = document.getElementById('viewBtn');
