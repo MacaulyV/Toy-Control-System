@@ -145,7 +145,7 @@ public class CorsConfig {
 
 1. **Acessar o Front-end**: Clique no link [https://toy-control-system.onrender.com](https://toy-control-system.onrender.com)
 
-2. **Visualizar Dados da API**: Para verificar os dados em formato JSON, Clique [https://toy-control-system.onrender.com/api/brinquedos](https://toy-control-system.onrender.com/api/brinquedos).
+2. **Visualizar Dados da API**: em formato JSON, Clique [https://toy-control-system.onrender.com/api/brinquedos](https://toy-control-system.onrender.com/api/brinquedos).
 
 ## 👥 **Equipe de Desenvolvimento**
 
