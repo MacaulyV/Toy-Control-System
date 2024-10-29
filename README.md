@@ -38,7 +38,7 @@ Todos esses endpoints foram testados utilizando **Postman** 🛠️, garantindo 
 #### **Endpoints Implementados**
 
 1. **GET /api/brinquedos**: Retorna todos os brinquedos ou filtra por nome.
-   - **Link para testar no navegador**: [http://localhost:8080/api/brinquedos](https://toy-control-system.onrender.com/api/brinquedos)
+   - **Link para testar no navegador**: [https://toy-control-system.onrender.com/api/brinquedos](https://toy-control-system.onrender.com/api/brinquedos)
 2. **GET /api/brinquedos/{id}**: Retorna um brinquedo específico pelo ID.
 3. **POST /api/brinquedos**: Cria um novo brinquedo.
 4. **PUT /api/brinquedos/{id}**: Atualiza um brinquedo pelo ID.
@@ -143,9 +143,9 @@ public class CorsConfig {
 
 ### **Links do Deploy realizados no Render**
 
-1. **Acessar o Front-end**: Abra o navegador e navegue e cole o link [http://localhost:8080](https://toy-control-system.onrender.com)
+1. **Acessar o Front-end**: Abra o navegador e navegue e cole o link [https://toy-control-system.onrender.com](https://toy-control-system.onrender.com)
 
-2. **Visualizar Dados da API**: Para verificar os dados em formato JSON, acesse [http://localhost:8080/api/brinquedos](https://toy-control-system.onrender.com/api/brinquedos).
+2. **Visualizar Dados da API**: Para verificar os dados em formato JSON, acesse [https://toy-control-system.onrender.com/api/brinquedos](https://toy-control-system.onrender.com/api/brinquedos).
 
 ## 👥 **Equipe de Desenvolvimento**
 
