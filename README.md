@@ -38,7 +38,7 @@ Todos esses endpoints foram testados utilizando **Postman** 🛠️, garantindo 
 #### **Endpoints Implementados**
 
 1. **GET /api/brinquedos**: Retorna todos os brinquedos ou filtra por nome.
-   - **Link para testar no navegador**: [http://localhost:8080/api/brinquedos](http://localhost:8080/api/brinquedos)
+   - **Link para testar no navegador**: [http://localhost:8080/api/brinquedos](https://toy-control-system.onrender.com/api/brinquedos)
 2. **GET /api/brinquedos/{id}**: Retorna um brinquedo específico pelo ID.
 3. **POST /api/brinquedos**: Cria um novo brinquedo.
 4. **PUT /api/brinquedos/{id}**: Atualiza um brinquedo pelo ID.
@@ -141,15 +141,11 @@ public class CorsConfig {
 
  **Nota**: O desenvolvimento do projeto foi feito utilizando a IDE **IntelliJ** 🖥️, e todos os testes de funcionamento foram realizados nesta IDE. Não testamos o funcionamento em outra IDE.
 
-### **Passos para Executar**
+### **Link do Deploy feito no Render**
 
-1. **Configurar o Banco de Dados**: Certifique-se de que o Oracle Database está configurado e rodando. Se quiser verificar os dados da tabela Brinquedos no banco, acesse o Oracle com minhas credenciais disponíveis no arquivo `application.properties`.
+1. **Acessar o Front-end**: Abra o navegador e navegue e cole o link [http://localhost:8080](https://toy-control-system.onrender.com)
 
-2. **Executar o Back-end**: Rode o comando `mvn spring-boot:run` para iniciar o servidor back-end ou clique em executar.
-
-3. **Acessar o Front-end**: Abra o navegador e navegue até ou [http://localhost:8080](http://localhost:8080) ou [http://localhost:8080/index.html](http://localhost:8080/index.html) para acessar a interface do usuário e interagir com a aplicação.
-
-4. **Visualizar Dados da API**: Para verificar os dados em formato JSON, acesse [http://localhost:8080/api/brinquedos](http://localhost:8080/api/brinquedos).
+2. **Visualizar Dados da API**: Para verificar os dados em formato JSON, acesse [http://localhost:8080/api/brinquedos](https://toy-control-system.onrender.com/api/brinquedos).
 
 ## 👥 **Equipe de Desenvolvimento**
 
