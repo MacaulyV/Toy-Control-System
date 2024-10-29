@@ -141,7 +141,7 @@ public class CorsConfig {
 
  **Nota**: O desenvolvimento do projeto foi feito utilizando a IDE **IntelliJ** 🖥️, e todos os testes de funcionamento foram realizados nesta IDE. Não testamos o funcionamento em outra IDE.
 
-### **Link do Deploy feito no Render**
+### **Links do Deploy realizados no Render**
 
 1. **Acessar o Front-end**: Abra o navegador e navegue e cole o link [http://localhost:8080](https://toy-control-system.onrender.com)
 
